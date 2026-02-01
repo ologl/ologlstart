@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Start Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Page background */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #dcdcdc;
+    }
+
+    /* The "document" */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px 20px 32px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.15);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin: 0 0 10px;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 22px 0 8px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0056b3;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    /* Small screens */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .page {
+        padding: 18px 14px 24px;
+        box-shadow: none; /* optional: flatter on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>The Start Page</h1>
+    <div class="subtitle">Quick links I actually use</div>
+
+    
+   <!-- TOOLS -->
+    <h2>Tools</h2>
+    <ul>
+      <li><a href="https://www.kagi.com" target="_blank">Kagi search engine</a></li>
+      <li><a href="https://outlook.office.com/mail/conversationhistory" target="_blank">GU-mail blank</a></li>
+      <li><a href="https://www.facebook.com/olofl1" target="_blank">Facebook blank</a></li>
+      <li><a href="https://calendar.google.com" target="_blank">Google Calendar</a></li>
+    </ul>
+    
+    <!-- MUSIC -->
+    <h2>Music</h2>
+    <ul>
+  
+      <li><a href="https://hypem.com" target="_blank">Hype Machine</a></li>
+    </ul>
+
+
+    <!-- MTG -->
+    <h2>Magic: The Gathering</h2>
+    <ul>
+ 
+      <li><a href="https://kitchentablemagic.org/about/" target="_blank">Kitchen Table Magic</a></li>
+
+      <li><a href="https://svenskamagic.se" target="_blank">Svenska Magic</a></li>
+
+    
+
+
+ 
+
+  </div>
+</body>
+</html>
