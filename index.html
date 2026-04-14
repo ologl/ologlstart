@@ -12,7 +12,6 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #dcdcdc;
     }
-
     /* The "document" */
     .page {
       max-width: 800px;
@@ -22,45 +21,37 @@
       box-shadow: 0 0 6px rgba(0,0,0,0.15);
       box-sizing: border-box;
     }
-
     h1 {
       font-size: 1.6rem;
       margin: 0 0 10px;
     }
-
     .subtitle {
       color: #555;
       font-size: 0.95rem;
       margin-bottom: 24px;
     }
-
     h2 {
       font-size: 1.1rem;
       margin: 22px 0 8px;
       border-bottom: 1px solid #ddd;
       padding-bottom: 4px;
     }
-
     ul {
       list-style: none;
       padding-left: 0;
       margin: 0;
     }
-
     li {
       margin: 4px 0;
     }
-
     a {
       text-decoration: none;
       color: #0056b3;
     }
-
     a:hover,
     a:focus {
       text-decoration: underline;
     }
-
     /* Small screens */
     @media (max-width: 600px) {
       body {
@@ -68,8 +59,32 @@
       }
       .page {
         padding: 18px 14px 24px;
-        box-shadow: none; /* optional: flatter on mobile */
+        box-shadow: none;
       }
+    }
+
+    /* ── Search bar ── */
+    #search {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 7px 10px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 1px solid #bbb;
+      background: #f7f7f7;
+      color: #222;
+      border-radius: 3px;
+      outline: none;
+    }
+    #search:focus {
+      border-color: #0056b3;
+      background: #fff;
+    }
+    /* Highlight the first match */
+    li.first-match > a {
+      font-weight: bold;
     }
   </style>
 </head>
@@ -78,8 +93,10 @@
     <h1>The Start Page</h1>
     <div class="subtitle">Quick links I actually use</div>
 
-    
-   <!-- TOOLS -->
+    <!-- Search bar -->
+    <input type="text" id="search" placeholder="Filter links… Enter to open first result" autofocus>
+
+    <!-- TOOLS -->
     <h2>Tools</h2>
     <ul>
       <li><a href="https://www.kagi.com" target="_blank">Kagi search engine</a></li>
@@ -87,9 +104,8 @@
       <li><a href="https://www.facebook.com/olofl1" target="_blank">Facebook blank</a></li>
       <li><a href="https://www.sverigesradio.se/ekot-nyhetssandning" target="_blank">Ekot</a></li>
       <li><a href="https://ologl.github.io/ologlstart/start_yt.html">Youtube Directory</a></li>
-      
     </ul>
-    
+
     <!-- MUSIC -->
     <h2>Music</h2>
     <ul>
@@ -97,18 +113,57 @@
       <li><a href="https://hypem.com" target="_blank">Hype Machine</a></li>
     </ul>
 
-
     <!-- MTG -->
     <h2>Magic: The Gathering</h2>
-    <ul>  
+    <ul>
       <li><a href="https://svenskamagic.se" target="_blank">Svenska Magic</a></li>
       <li><a href="https://ologl.github.io/ologlstart/magic.html">Magic Directory</a></li>
     </ul>
-    
-
-
- 
 
   </div>
+
+  <!-- ============================================================
+       SEARCH LOGIC — nothing above this point needs to change
+       when you add/remove links.
+       ============================================================ -->
+  <script>
+    (function () {
+      const input = document.getElementById('search');
+      const items = Array.from(document.querySelectorAll('li'));
+
+      function filter() {
+        const query = input.value.trim().toLowerCase();
+
+        // Remove previous first-match highlight
+        items.forEach(li => li.classList.remove('first-match'));
+
+        if (query === '') {
+          // Show everything when the box is empty
+          items.forEach(li => li.style.display = '');
+          return;
+        }
+
+        let firstMatch = null;
+        items.forEach(li => {
+          const text = li.textContent.toLowerCase();
+          const matches = text.includes(query);
+          li.style.display = matches ? '' : 'none';
+          if (matches && !firstMatch) firstMatch = li;
+        });
+
+        if (firstMatch) firstMatch.classList.add('first-match');
+      }
+
+      function openFirst() {
+        const firstMatch = document.querySelector('li.first-match > a');
+        if (firstMatch) firstMatch.click();
+      }
+
+      input.addEventListener('input', filter);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') openFirst();
+      });
+    })();
+  </script>
 </body>
 </html>
