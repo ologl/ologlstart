@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Start Page – Podcasts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Page background */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #dcdcdc;
+    }
+
+    /* The "document" */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px 20px 32px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.15);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin: 0 0 10px;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 22px 0 8px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0056b3;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    /* Back link */
+    .back {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 12px 0 24px;
+    }
+
+    /* Podcast tracker table */
+    table.tracker {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    table.tracker th {
+      text-align: left;
+      font-weight: 600;
+      color: #555;
+      border-bottom: 1px solid #ddd;
+      padding: 6px 8px 6px 0;
+    }
+    table.tracker td {
+      padding: 8px 8px 8px 0;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    table.tracker td.checked {
+      white-space: nowrap;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    /* Small screens */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .page {
+        padding: 18px 14px 24px;
+        box-shadow: none;
+      }
+      table.tracker td.checked {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+
+    
+    <h1>The Start Page – Podcasts</h1>
+    <div class="subtitle">Podcasts</div>
+
+
+    <!-- Back (top) -->
+    <a class="back" href="index.html">← Back</a>
+
+    <h2>Tracking</h2>
+    <table class="tracker">
+      <tr>
+        <th>Show</th>
+        <th>Last known episode</th>
+        <th>Checked</th>
+      </tr>
+      <tr>
+        <td><a href="https://www.nytimes.com/column/ezra-klein-podcast" target="_blank">The Ezra Klein Show</a></td>
+        <td>A Radical Vision for Israelis and Palestinians</td>
+        <td class="checked">Jul 7, 2026</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.ppfideas.com/" target="_blank">Past Present Future</a></td>
+        <td>The History of Bad Ideas: Deliverism</td>
+        <td class="checked">Jul 15, 2026</td>
+      </tr>
+    </table>
+
+    <h2>Tips I have received</h2>
+    <ul>
+    </ul>
+
+
+    <!-- Back (bottom) -->
+    <a class="back" href="index.html">← Back</a>
+
+  </div>
+</body>
+</html>
